@@ -14,17 +14,23 @@ int strLen1(char *cp){
 }
 
 
-char* strcpy1(char *dest, char *source){
+char *strcpy1(char *dest, char *source){
   int i = 0;
-  while(*source){
-    *dest = *source;
-    dest++;
-    source++;
+  int k = 0;
+  while(dest[k]){
+    dest[k] = 0;
+    k++;
+  }
+  while(source[i]){
+    dest[i]=source[i];
     i++;
   }
   return dest;
 }
-  
+
+int same(char *a,char *b){
+  return a == b;
+}
 int main(){
   char string1[100] = "hello, my name is...";
   char string2[100] = "my name is...";
@@ -32,10 +38,12 @@ int main(){
   printf("string1 strLen1: %d\n\n",strLen1(string1));
   printf("string2[0] :%d\n", string2[0]);
   printf("string3[0] :%d\n\n", string3[0]);
-  printf("string2 cpy string3: %lu\n",strcpy1(string2,string3));
-  printf("string2 cpy String3(built in): %lu\n", strcpy(string2,string3));
-  printf("string2[0] :%d\n", string2[0]);
-  printf("string3[0] :%d\n", string3[0]);
+  printf("string2 :%s\n", string2);
+  printf("string3 :%s\n", string3);
+  printf("string2 cpy string3: %s\n",strcpy1(string2,string3));
+  printf("string2 cpy String3(built in): %s\n",strcpy(string2,string3));
+  printf("strcpy1 = strcpy?:%d\n\n",same(string2,string3));
+  
   
   
   
