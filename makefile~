@@ -1,0 +1,8 @@
+StringTest: String.c
+	gcc String.c -o Stringtest
+
+run: Stringtest
+	./Stingtest
+
+clean: 
+	rm *~
